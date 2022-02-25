@@ -1,0 +1,44 @@
+.navbars {
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    z-index: 1;
+  }
+  
+  .navbars a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbars a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .navbars a.active {
+    background-color: #002E62;
+    color: white;
+  }
+
+
+.spare_part_container {
+    padding: 10px 30px;
+}
+
+.button_spart_part {
+    background-color: #e8a620;
+}
+
+.setting-cont {
+    margin: 0 20px;
+}

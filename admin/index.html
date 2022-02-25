@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+        <title>Back office</title>
+        <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/custom.css">
+    </head>
+    <body>
+        <div class="main-login" style="height: 100vh">
+            <div class="header-containers">
+        
+
+           <div>
+               <div>
+                   <img src="./assets/fbn-general.jpeg" alt="logo"/>
+               </div>
+            <div class="row" style="margin-top: 30px">
+                <div class="input-field col s12" style="color: #ffffff">
+                  <input id="ficNo" type="text" style="color: #ffffff"/>
+                  <label for="email">Enter your Fic number</label>
+                </div>
+              </div>
+
+
+              <button style="width: 100%" id="loginToPortal" class="btn waves-effect waves-light" type="submit" name="action">Login
+              </button>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="main-cont-s">
+     
+            <div class="header-container">
+                <p class="center-align">Dashboard</p>
+                <div class="main-title">
+                    <p class="main-subtitle">FIC00374</p>
+                    <div class="title-subtab">
+                        <div class="subtitle-title-1 subtitle-title">Staff No</div>
+                        <div class="subtitle-title-2 subtitle-title">active</div>
+                    </div>
+                </div>
+                <div class="info-container">
+                    <div class="">
+                        <div class="header-info-container">Total Sum Assured</div>
+                        <div>N0.00</div>
+                    </div>
+                    <div class="">
+                        <div class="header-info-container">Claims</div>
+                        <div>1</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="row" id="rows">
+               
+    
+               
+              </div>
+    
+              <div class="navbars">
+                <a href="./index.html" class="active"><ion-icon name="home"></ion-icon></a>
+                <a href="./add_spare_part.html"><ion-icon name="search-circle"></ion-icon></a>
+                <a href="./add_spare_part.html"><ion-icon name="settings"></ion-icon></a>
+              </div>
+        </div>
+   
+
+
+          <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <script src="./mains.js" type="module"></script>
+            <script src="../js/main.js" type="module"></script>
+            <script src="../js/constants.js" type="module"></script>
+            <script src="../js/ui.js" type="module"></script>
+            <script src="../js/wss.js" type="module"></script>
+            <script src="../js/store.js" type="module"></script>
+            <script src="../js/webRTCHandler.js" type="module"></script>
+            <script src="../js/main.js" type="module"></script>
+          
+
+    </body>
+</html>

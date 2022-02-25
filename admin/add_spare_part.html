@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Back office</title>
+        <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/custom.css">
+    </head>
+    <body style="margin-bottom: 200px">
+        <div class="header-container">
+            <div style="display: flex">
+            <p><ion-icon name="chevron-back-outline" id="iconClick"></ion-icon></p>
+       
+            <p class="center-align">Spart Part</p>
+        </div>
+            <div class="main-title">
+                <p class="main-subtitle">FIC00374</p>
+                <div class="title-subtab">
+                    <div class="subtitle-title-1 subtitle-title">Staff No</div>
+                    <div class="subtitle-title-2 subtitle-title">active</div>
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="">
+                    <div class="header-info-container">Total Sum Assured</div>
+                    <div>N0.00</div>
+                </div>
+                <div class="">
+                    <div class="header-info-container">Claims</div>
+                    <div>1</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spare_part_container">
+            <div class="input-field col s12">
+                <select class="spare_part_select">
+                  <option value="" disabled selected>Choose your option</option>
+                </select>
+                <label>Select Spare Part</label>
+              </div>
+            <input placeholder="Enter Name" id="spare_part_name" type="text" class="validate">
+            <input placeholder="Enter Amount" id="spare_part_number" type="number" class="validate">
+            <button class="btn waves-effect waves-light button_spart_part"  type="submit" name="action">Submit</button>
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="./js/mains.js" type="module"></script>
+        <script>
+             document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+
+      
+        </script>
+        </body>
+
+        </html>

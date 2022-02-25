@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <title>Claim</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link rel="stylesheet" type="text/css" href="./styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+
+  
+</head>
+<style>
+
+</style>
+<!-- End of Commented stylesheet -->
+
+
+
+<body style="background-color:#eee;">
+
+  
+
+  <div class="progress">
+    <div class="indeterminate"></div>
+</div>
+
+<div class="errorMessage hide-def">
+  User not found
+</div>
+ 
+<div class="cont hide-def">
+ 
+  <div class="header-container">
+    <p class="center-align">Claim Information</p>
+    <div class="main-title info-container">
+      <div>
+        <p class="main-subtitle"></p>
+        <div class="title-subtab">
+            <div class="subtitle-title-1 subtitle-title one-title"></div>
+            <div class="subtitle-title-2 subtitle-title">active</div>
+        </div>
+      </div>
+      <div>
+          <div class="subtitle-title">Plate no</div>
+          <div class="plateNo"></div>
+      </div>
+    </div>
+    <div class="info-container">
+        <div class="">
+            <div class="header-info-container">Total Sum Assured</div>
+            <div class="sumInsured">N0.00</div> 
+        </div>
+        <div class="">
+            <div class="header-info-container">Policy Period</div>
+            <div class="policyPeriod">1</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card cardinfo">
+      <div class="info-container mts">
+        <div>
+          <div class="subtitle-title">Full Name</div>
+          <div class="full_name"></div>
+        </div>
+        <div>
+          <div class="subtitle-title ftr">Engine No</div>
+          <div class="engineNo"></div>
+        </div>
+      </div>
+      <div class="info-container mts">
+        <div>
+          <div class="subtitle-title">Phone No</div>
+          <div class="phone_no"></div>
+        </div>
+        <div>
+          <div class="subtitle-title ftr">Policy No</div>
+          <div class="policyNo"></div>
+        </div>
+      </div>
+      <div class="info-container mts">
+        <div>
+          <div class="subtitle-title">Frequency of Payment</div>
+          <div class="fom"></div>
+        </div>
+        <div>
+          <div class="subtitle-title ftr">Expiry Date</div>
+          <div class="expiryDate"></div>
+        </div>
+      </div>
+
+      <div class="input-container hide">
+        <div class="form-group">
+          <div class="col-sm-12">
+          <input type="file" id="file" accept="image/*" multiple>
+         </div>
+        </div>
+
+      </div> 
+
+       <div id="img-container" class="hide">
+
+       </div>
+
+
+
+
+
+       <div id="main-v"> 
+        <div class="main-video-container hide">
+            <div id="local_video_container">
+              <video id="real_local_video"  muted autoplay></video>
+            </div>
+          <video id="real_remote_video"  muted autoplay></video>
+
+        <div class="call-container-main">
+
+          <div id="dialog">
+            <div class="call-container" id="call_video">
+                <ion-icon name="call"></ion-icon>
+            </div>
+          </div>
+
+            <!-- <div class="call-container-stop">
+                <ion-icon name="stop"></ion-icon>
+            </div> -->
+    </div>
+    </div>
+
+
+
+
+
+
+<div class="pcodeContainer hide">
+<input type="text" id="personal_code">
+    <div id="dashboard_blur display_none"></div>
+    <div id="call_buttons">
+      <!-- <button>speaker</button>
+      <button>cut</button> -->
+
+    </div>
+
+
+<input type="text" id="remote_code" placeholder="paste remote offer">
+<!-- <video id="real_local_video" muted autoplay></video> -->
+<!-- <video  id="real_remote_video" autoplay muted></video> -->
+<!-- <button id="call_video">video</button> -->
+
+<!-- <div id="dialog"></div> -->
+
+
+
+</div>
+
+
+<div class="">
+  <select>
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+  </select>
+  <label>Select Third Party Count</label>
+</div>
+
+
+<div class="acceptContainer">
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" id="thirdPartyLiability" />
+      <span><b>Third Party Liability</b></span>
+    </label>
+  </p>
+   
+  <div class="thirdPartyLiabilityContainer">
+    <div class="input-field col s12">
+      <input type="text" id="fullName"  class="materialize-textarea">
+      <label for="fullName">Full Name</label>
+    </div>
+    <div class="input-field col s12">
+      <input type="text" id="thirdPartyEmail" class="materialize-textarea">
+      <label for="thirdPartyEmail">Email</label>
+    </div>
+    <div class="input-field col s12">
+      <input type="text" id="thirdPartyPhone" class="materialize-textarea">
+      <label for="thirdPartyPhone">Phone</label>
+    </div>
+  </div>
+
+  <div class="thirdPartyLiabilityContainer">
+    <div class="input-field col s12">
+      <input type="text" id="fullName"  class="materialize-textarea">
+      <label for="fullName">Full Name</label>
+    </div>
+    <div class="input-field col s12">
+      <input type="text" id="thirdPartyEmail" class="materialize-textarea">
+      <label for="thirdPartyEmail">Email</label>
+    </div>
+    <div class="input-field col s12">
+      <input type="text" id="thirdPartyPhone" class="materialize-textarea">
+      <label for="thirdPartyPhone">Phone</label>
+    </div>
+  </div>
+
+</div>
+
+<div class="acceptContainer">
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" id="agreementCheck" />
+      <span><b>I accept responsiblity for the repair of damage to vehicle which occur on <span id="dateNow"></span></b></span>
+    </label>
+  </p>
+  <div class="input-field col s12">
+    <textarea id="textarea1" class="materialize-textarea descriptionLoss"></textarea>
+    <label for="textarea1">Description of Loss</label>
+  </div>
+
+  <div>
+    <button style="width: 100%" id="submitId" class="btn waves-effect waves-light" type="submit" name="action">Submit
+    </button>
+  </div>
+</div>
+
+      </div>
+    </div>
+</div>
+
+</div>
+
+
+      
+<script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+<script src="./js/script.js"  type="module"></script>
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+var elems = document.querySelectorAll('select');
+//var instances = M.FormSelect.init(elems, options);
+});
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="./js/elements.js" type="module"></script>
+<script src="./js/constants.js" type="module"></script>
+<script src="./js/ui.js" type="module"></script>
+<script src="./js/wss.js" type="module"></script>
+<script src="./js/store.js" type="module"></script>
+<script src="./js/webRTCHandler.js" type="module"></script>
+<script src="./js/main.js" type="module"></script>
+
+     
+
+</body>
+</html>
+
+
+
+ 
