@@ -4,10 +4,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Back office</title>
-        <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/custom.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
     </head>
     <body>
 
@@ -21,7 +23,7 @@
            </div>
         <div class="row" style="margin-top: 30px">
             <div class="input-field col s12" style="color: #ffffff">
-              <input id="ficNo" type="text" style="color: #ffffff"/>
+              <input id="ficNo" type="text" style="color: #ffffff"  class="form-control" />
               <label for="email">Enter your Fic number</label>
             </div>
           </div>
@@ -68,7 +70,25 @@
         </div>
         <video id="real_remote_video"  muted autoplay></video>
 
+          <div class="recording_btns display_none" id="recording_btns">
+            <div>
+              <button id="start_recording_button">
+                <img src="../assets/recordingStart.png"/>
+              </button>
+            </div>
+        
+
+          </div>
+
+          <div class="video_recording_buttons video_recording_buttons_container display_none" id="video_recording_buttons">
+            <div>
+              <button id="stop_recording_button">stop</button>
+            </div>
+          </div>
+
         <div class="call-container-main">
+
+        
            
 
             <div id="dialog">
@@ -76,6 +96,12 @@
                 <ion-icon name="call"></ion-icon>
             </div>
             </div>
+
+
+           
+           
+
+
             <!-- <div class="call-container-stop">
                 <ion-icon name="stop"></ion-icon>
             </div> -->
@@ -86,7 +112,7 @@
 
 
         <div class="setting-cont">
-        <input type="text" id="personal_code" placeholder="your code">
+        <input type="text" id="personal_code" placeholder="your code"  class="form-control" >
             <div id="dashboard_blur display_none"></div>
             <div id="call_buttons">
             <!-- <button>speaker</button>
@@ -94,7 +120,7 @@
             </div>
 
 
-             <input type="text" id="remote_code" placeholder="paste remote offer">
+             <input type="text" id="remote_code" placeholder="paste remote offer"  class="form-control" >
             <!-- <video id="real_local_video" muted autoplay></video> -->
             <!--<video  id="real_remote_video" autoplay muted></video> -->
             <!-- <button id="call_video">video</button> -->
@@ -153,11 +179,11 @@
              </div> -->
 
              <div style="margin-bottom: 30px">
-               <input placeholder="search for spare part" id="searchForPrice"/>
+               <input placeholder="search for spare part" id="searchForPrice"  class="form-control" />
                <div id="query_results"></div>
              </div>
 
-             <table id="table" class="striped">
+             <table id="table" class="table striped">
               <thead>
                 <tr>
                     <th>Part</th>
@@ -172,20 +198,31 @@
             </table>
 
              <div style="margin-bottom: 60px">
-               <input placeholder="Enter Part" id="part"/>
-               <input placeholder="Enter Price" id="part_amount"/>
-               <select id="claim_type">
-                 <option value="" disabled selected>Please Select</option>
+               <input placeholder="Enter Part" id="part"  class="form-control" />
+               <input placeholder="Enter Price" id="part_amount"  class="form-control" />
+             <select id="claim_type-xx" class="claim_type-xx form-control">
+                <option value="" disabled selected>Please Select</option>
                  <option value="insured">Insured</option>
-                 <option value="third_party">Third Party</option>
-
                </select>
-              <button class="btn btn-small" id="addItem">Add</button>
+              <button class="btn btn btn-primary btn-small mt-5" id="addItem">Add</button>
             </div>
+
+
+
+
+            <div class="toast hide trs" role="alert" aria-live="assertive" aria-atomic="true">
+      
+              <div class="toast-body">
+               Offers successfully sent
+              </div>
+            </div>
+
+
+            
             
 
 <div>
-  <button style="width: 100%; margin-top: 30px" class="btn waves-effect waves-light" id="submit-data" type="submit" name="action">Submit
+  <button style="width: 100%; margin-top: 30px" class="btn btn btn-primary waves-effect waves-light" id="submit-data" type="submit" name="action">Submit
   </button>
 </div>
 
@@ -203,13 +240,19 @@
 
         </div>
 
+        <script>
+          
+        </script>
 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
           <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
             <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <script src="../config.js" type="module"></script>
+
             <script src="./mains.js" type="module"></script>
             <script src="../js/main.js" type="module"></script>
             <script src="../js/constants.js" type="module"></script>
@@ -218,19 +261,17 @@
             <script src="../js/store.js" type="module"></script>
             <script src="../js/webRTCHandler.js" type="module"></script>
             <script src="../js/main.js" type="module"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-       var elems = document.querySelectorAll('select');
-       //var instances = M.FormSelect.init(elems, options);
-     });
-   
-     // Or with jQuery
-   
-     $(document).ready(function(){
-       $('select').formSelect();
-     });
-         
-           </script>
-
+          
+            <!-- <script>
+              document.addEventListener('DOMContentLoaded', function() {
+     var elems = document.querySelectorAll('select');
+    });
+    
+    
+    $(document).ready(function(){
+     $('select').formSelect();
+    });
+       
+         </script> -->
     </body>
 </html>

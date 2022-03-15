@@ -42,3 +42,13 @@
 .setting-cont {
     margin: 0 20px;
 }
+
+.display_none {
+  display: none;
+}
+
+.recording_btns, .video_recording_buttons_container {
+  position: absolute;
+    top: 10px;
+    right: 7px;
+}

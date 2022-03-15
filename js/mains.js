@@ -140,39 +140,39 @@ const data = {
     fic: sessionStorage.getItem('staffid')
 }
 
-fetch('https://fast-forest-82655.herokuapp.com/api/ussd/fetch_transaction', {
-    method: 'POST',
-    headers: {
-        'Content-Type':'application/json',
-        'Accept':'application/json'
-    },
-    body: JSON.stringify(data)
-}).then((res) => res.json())
-.then((data) => {
-    if(data.status) {
-        data.data.forEach((dt) => {
+// fetch('https://fast-forest-82655.herokuapp.com/api/ussd/fetch_transaction', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type':'application/json',
+//         'Accept':'application/json'
+//     },
+//     body: JSON.stringify(data)
+// }).then((res) => res.json())
+// .then((data) => {
+//     if(data.status) {
+//         data.data.forEach((dt) => {
             
-            document.querySelector('#rows').innerHTML += `
-            <div class="col s12 m6">
-            <div class="card">
-              <div class="card-content" style="padding: 12px">
-                <div class="container-p info-container divCont">
-                    <div class="main-prinary-text"><a href="./claim_detail.html?name=${dt.full_name}&claimNo=${dt.claim_no}">${dt.claim_no}</a></div>
-                    <div class="subtitle-title-2 subtitle-title" style="color: #ffffff">Active</div>
-                </div>
-                <div class="container-p info-container">
-                    <div class="textsub main-prinary-text">${dt.full_name}</div>
-                    <div class="textsub subtitle-title">${dt?.policy_no}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-            `
+//             document.querySelector('#rows').innerHTML += `
+//             <div class="col s12 m6">
+//             <div class="card">
+//               <div class="card-content" style="padding: 12px">
+//                 <div class="container-p info-container divCont">
+//                     <div class="main-prinary-text"><a href="./claim_detail.html?name=${dt.full_name}&claimNo=${dt.claim_no}">${dt.claim_no}</a></div>
+//                     <div class="subtitle-title-2 subtitle-title" style="color: #ffffff">Active</div>
+//                 </div>
+//                 <div class="container-p info-container">
+//                     <div class="textsub main-prinary-text">${dt.full_name}</div>
+//                     <div class="textsub subtitle-title">${dt?.policy_no}</div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//             `
 
-                })
-    }
-})
-.catch((err) => console.log(err))
+//                 })
+//     }
+// })
+// .catch((err) => console.log(err))
 
 
 document.querySelector('#spare-part-header')?.addEventListener('change', function(e){
@@ -274,33 +274,6 @@ cars.forEach((car) => {
 })
 
 
-
-fetch(`https://fbngi-ecosystem.com/Apps/Test/ePortal/testApi/fetchUssd.php?staff_id=${staff_id}`)
-.then((res)=> res.json())
-.then((data) => {
-    //
-})
-.catch((error) => console.log(error))
-
-document.querySelector('.button_spart_part')?.addEventListener('click', function(){
-    const spare_part_name = document.querySelector('#spare_part_name').value;
-    const spare_part_number = document.querySelector('#spare_part_number').value;
-
-    var formData = new FormData();
-    formData.append('name', spare_part_name); 
-    formData.append('amount', spare_part_number);
-
-    fetch('https://fbngi-ecosystem.com/Apps/Test/ePortal/testApi/crudSparepart.php', {
-        method: 'POST',
-        body: formData
-    }).then((res) => res.json())
-    .then((data) => {
-        console.log(data);
-    }).catch((error) => {
-        console.log(error);
-    })
-
-})
 
 
 if(sessionStorage.getItem('staffid')) {

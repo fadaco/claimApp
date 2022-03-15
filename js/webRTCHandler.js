@@ -29,7 +29,6 @@ export const getLocalPreview = () => {
 const createPeerConnection = () => {
     peerConnection = new RTCPeerConnection(configuration);
     peerConnection.onicecandidate = (event) => {
-        console.log('getting ice candition from stun server')
         if(event.candidate) {
             //send ice canditate to peer
             wss.sendDataUsingWebRTCSignaling({
@@ -69,7 +68,6 @@ const createPeerConnection = () => {
 }
 
 export const sendPreOffer = (callType, calleePersonalCode) => {
-    window.console.log('sending pre offer')
 
     connectedUserDetails = {
         callType,
@@ -103,7 +101,6 @@ export const handlePreOffer = (data) => {
 }
 
 const acceptCallHandler = () => {
-    console.log('call accpeted')
     createPeerConnection()
     sendPreOfferAnswer(constants.preOfferAnswer.CALL_ACCEPTED)
     ui.showCallElements(connectedUserDetails.callType)
@@ -165,8 +162,6 @@ const sendWebRTCOffer = async () => {
 }
 
 export const handleWebRTCOffer = async(data) => {
-    console.log('webrtc offer came')
-    console.log(data)
     await peerConnection.setRemoteDescription(data.offer);
     const answer = await peerConnection.createAnswer();
     await peerConnection.setLocalDescription(answer);
@@ -178,13 +173,10 @@ export const handleWebRTCOffer = async(data) => {
 }
 
 export const handleWebRTCAnswer = async (data) => {
-    console.log('handling webtc anser')
-    console.log(data)
     await peerConnection.setRemoteDescription(data.answer)
 }
 
 export const handleWebRTCCandidate = async (data) => {
-    console.log('handing incommming')
     try {
         await peerConnection.addIceCandidate(data.candidate);
     } catch(err) {

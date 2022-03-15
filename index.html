@@ -123,6 +123,7 @@
             <div class="call-container" id="call_video">
                 <ion-icon name="call"></ion-icon>
             </div>
+
           </div>
 
             <!-- <div class="call-container-stop">
@@ -158,54 +159,29 @@
 </div>
 
 
-<div class="">
-  <select>
-    <option value="" disabled selected>Choose your option</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-  </select>
-  <label>Select Third Party Count</label>
-</div>
+
 
 
 <div class="acceptContainer">
   <p>
     <label>
       <input type="checkbox" class="filled-in" id="thirdPartyLiability" />
-      <span><b>Third Party Liability</b></span>
+      <span><b>Are there other parties involved in the accident?</b></span>
     </label>
   </p>
+
+  <div class="input-field col s12 hide" id="chooseOptionContainer">
+    <select id="chooseOption" class="optionChoose">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <label>How Many</label>
+  </div>
+
+  <div class="thirdPLiability"></div>
    
-  <div class="thirdPartyLiabilityContainer">
-    <div class="input-field col s12">
-      <input type="text" id="fullName"  class="materialize-textarea">
-      <label for="fullName">Full Name</label>
-    </div>
-    <div class="input-field col s12">
-      <input type="text" id="thirdPartyEmail" class="materialize-textarea">
-      <label for="thirdPartyEmail">Email</label>
-    </div>
-    <div class="input-field col s12">
-      <input type="text" id="thirdPartyPhone" class="materialize-textarea">
-      <label for="thirdPartyPhone">Phone</label>
-    </div>
-  </div>
-
-  <div class="thirdPartyLiabilityContainer">
-    <div class="input-field col s12">
-      <input type="text" id="fullName"  class="materialize-textarea">
-      <label for="fullName">Full Name</label>
-    </div>
-    <div class="input-field col s12">
-      <input type="text" id="thirdPartyEmail" class="materialize-textarea">
-      <label for="thirdPartyEmail">Email</label>
-    </div>
-    <div class="input-field col s12">
-      <input type="text" id="thirdPartyPhone" class="materialize-textarea">
-      <label for="thirdPartyPhone">Phone</label>
-    </div>
-  </div>
-
+  
 </div>
 
 <div class="acceptContainer">
@@ -232,18 +208,12 @@
 
 </div>
 
-
-      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+<script src="./config.js" type="module"></script>
 <script src="./js/script.js"  type="module"></script>
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-var elems = document.querySelectorAll('select');
-//var instances = M.FormSelect.init(elems, options);
-});
-</script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="./js/elements.js" type="module"></script>
@@ -252,8 +222,18 @@ var elems = document.querySelectorAll('select');
 <script src="./js/wss.js" type="module"></script>
 <script src="./js/store.js" type="module"></script>
 <script src="./js/webRTCHandler.js" type="module"></script>
+<script src="./js/recordingUtils.js" type="module"></script>
 <script src="./js/main.js" type="module"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+var elems = document.querySelectorAll('select');
+//var instances = M.FormSelect.init(elems, options);
+});
 
+$(document).ready(function(){
+       $('select').formSelect();
+     });
+</script>
      
 
 </body>

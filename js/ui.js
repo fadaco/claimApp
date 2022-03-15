@@ -81,6 +81,36 @@ const showVideoCallElements = () => {
 
    const remoteVideo = document.querySelector('#real_remote_video')
     showElement(remoteVideo);
+
+    const recordingButton = document.querySelector('#recording_btns')
+    if(recordingButton) {
+    showElement(recordingButton)
+    }
+}
+
+export const showRecordingPanel = () => {
+    const recordingButtons = document.querySelector('#video_recording_buttons')
+    if(recordingButtons) {
+    showElement(recordingButtons);
+    }
+
+    //hide start recording button if active
+    const startRecordingButton = document.querySelector('#start_recording_button')
+    if(startRecordingButton) {
+    hideElement(startRecordingButton)
+    }
+}
+
+export const resetRecordingButtons = () => {
+    const startRecordingButton = document.querySelector('#start_recording_button')
+    const recordingButtons = document.querySelector('#video_recording_buttons')
+
+    if(recordingButtons) {
+    hideElement(recordingButtons);
+    }
+    if(startRecordingButton) {
+    showElement(startRecordingButton);
+    }
 }
 
 const enableDashboard = () => {
@@ -105,7 +135,8 @@ const hideElement = (element) => {
 
 const showElement = (element) => {
     if(element.classList.contains('display_none')) {
-        element.classList.add('display_none')
+        //element.classList.add('display_none')
+        element.classList.remove('display_none')
     }
 }
 
