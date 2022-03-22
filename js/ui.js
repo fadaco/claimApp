@@ -77,7 +77,9 @@ export const showCallElements = (callType) => {
 const showVideoCallElements = () => {
 
     const callButtons = document.querySelector('#call_buttons')
+    if(callButtons) {
     showElement(callButtons)
+    }
 
    const remoteVideo = document.querySelector('#real_remote_video')
     showElement(remoteVideo);
@@ -113,6 +115,22 @@ export const resetRecordingButtons = () => {
     }
 }
 
+export const updateUIAfterHangUp = (callType) => {
+   // enableDashboard();
+    if(callType === constants.callType.VIDEO_PERSONAL_CODE){
+        const callButtons = document.querySelector('#call_buttons');
+        hideElement(callButtons); 
+    }
+
+  //  const placeholder = document.querySelector('#video_placeholder');
+    //showElement(placeholder)
+
+    const remoteVideo = document.querySelector('#real_remote_video');
+    hideElement(remoteVideo);
+
+    removeAllDialogs();
+}
+
 const enableDashboard = () => {
     const dashboardBlocker = document.querySelector('#dashboard_blur');
     if(!dashboardBlocker.classList.contains('display_none')) {
@@ -124,6 +142,13 @@ const disableDashboard = () => {
     const dashboardBlocker = document.querySelector('#dashboard_blur');
     if(dashboardBlocker.classList.contains('display_none')) {
         dashboardBlocker.classList.remove('display_none');
+    }
+}
+
+export const removeCallIcon = () => {
+    const callingIcon = document.querySelector('#call_video');
+    if(callingIcon) {
+        hideElement(callingIcon);
     }
 }
 

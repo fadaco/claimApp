@@ -96,7 +96,9 @@ export const handlePreOffer = (data) => {
     }
 
     if(callType === constants.callType.VIDEO_PERSONAL_CODE) {
+        ui.removeCallIcon()
         ui.showIncomingCallDialog(callType, acceptCallHandler, rejectCallHandler)
+        
     }
 }
 
@@ -183,3 +185,31 @@ export const handleWebRTCCandidate = async (data) => {
         console.log("error occured when trying to add received ice candtion",  err)
     }
 }
+
+export const handleHangUp = () => {
+    const data = {
+        connectedUserSocketId: connectedUserDetails.socketId
+    }
+
+    wss.sendUserHangedUp(data);
+    closePeerConnectionAndRestState();
+}
+
+export const handleConnectedUserHangedUp = () => {
+    closePeerConnectionAndRestState();
+}
+
+const closePeerConnectionAndRestState = () => {
+    if(peerConnection) {
+        peerConnection.close();
+        peerConnection = null;
+    }
+
+    if(connectedUserDetails.callType === constants.callType.VIDEO_PERSONAL_CODE) {
+        store.getState().localStream.getVideoTracks()[0].enabled = true;
+        store.getState().localStream.getAudioTracks()[0].enabled = true;
+
+        ui.updateUIAfterHangUp(connectedUserDetails.callType)
+        connectedUserDetails = null;
+    }
+} 

@@ -305,7 +305,7 @@ hr {
 
 .call-container-main {
   width: 100%;
-  height: 20px;
+  height: auto;
   position: absolute;
   bottom: 0;
   display: flex;
@@ -313,11 +313,16 @@ hr {
   margin-bottom: 42px;
 }
 
+#dialog {
+  display: flex;
+}
+
 .call-container {
   background: #37B60B;
     border-radius: 50%;
     color: #ffffff;
     padding: 6px 10px;
+    margin-right: 10px;
 }
 
 .call-container-stop {

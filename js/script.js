@@ -66,6 +66,7 @@ body: JSON.stringify({
 })
 .then((res) => res.json())
 .then((data) => {
+  console.log('dfjfjjf')
   console.log(data)
   if(data.status) {
     if(document.querySelector('.cont').classList.contains('hide-def')) {
@@ -75,19 +76,7 @@ body: JSON.stringify({
 
     
 
-    if(data.data.description_of_loss) {
-document.querySelector('.main-video-container').classList.remove('hide')
-    document.querySelector('.pcodeContainer').classList.remove('hide')
-    document.querySelector('.input-container').classList.remove('hide')
-    document.querySelector('#img-container').classList.remove('hide')
-    document.querySelectorAll('.acceptContainer').forEach(evt => {
-      console.log(evt);
-      evt.classList.add('hide')
-     // evt.target.classList.add('hide')
-    })
-      document.querySelector('#submitId').innerHTML = 'Submit';
-      main.startApp();
-    } 
+  
 
     document.querySelector('.policyNo').innerHTML = data.data.policy_no;
     document.querySelector('.full_name').innerHTML = data.data.full_name;
@@ -100,6 +89,21 @@ document.querySelector('.main-video-container').classList.remove('hide')
     document.querySelector('.expiryDate').innerHTML = data.data.expiry_date;
     document.querySelector('.fom').innerHTML = data.data.frequency_of_payment;
     document.querySelector('.main-subtitle').innerHTML = claimno;
+
+    if(data.data.description_of_loss) {
+      console.log('assert')
+document.querySelector('.main-video-container').classList.remove('hide')
+    document.querySelector('.pcodeContainer').classList.remove('hide')
+    document.querySelector('.input-container').classList.remove('hide')
+    document.querySelector('#img-container').classList.remove('hide')
+    document.querySelectorAll('.acceptContainer').forEach(evt => {
+      console.log(evt);
+      evt.classList.add('hide')
+     // evt.target.classList.add('hide')
+    })
+      document.querySelector('#submitId').innerHTML = 'Submit';
+      main.startApp();
+    } 
     
   }
 })

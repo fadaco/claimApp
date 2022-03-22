@@ -119,16 +119,21 @@
 
         <div class="call-container-main">
 
-          <div id="dialog">
-            <div class="call-container" id="call_video">
-                <ion-icon name="call"></ion-icon>
-            </div>
+          <div id="dialog"></div>
 
-          </div>
+         
 
-            <!-- <div class="call-container-stop">
-                <ion-icon name="stop"></ion-icon>
-            </div> -->
+          <div class="call-container" id="call_video">
+            <ion-icon name="call"></ion-icon>
+        </div>
+
+        <div class="call-container-stop display_none" id="call_buttons">
+          <div id="hang_up_button">
+          <ion-icon name="stop"></ion-icon>
+        </div>
+        </div>
+
+            
     </div>
     </div>
 
@@ -140,11 +145,11 @@
 <div class="pcodeContainer hide">
 <input type="text" id="personal_code">
     <div id="dashboard_blur display_none"></div>
-    <div id="call_buttons">
+    <!-- <div id="call_buttons"> -->
       <!-- <button>speaker</button>
       <button>cut</button> -->
 
-    </div>
+    <!-- </div> -->
 
 
 <input type="text" id="remote_code" placeholder="paste remote offer">

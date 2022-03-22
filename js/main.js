@@ -15,10 +15,14 @@ export const startApp = (cb) => {
 
     document.querySelector('#call_video')?.addEventListener('click', function(e){
         e.preventDefault()
+
         const calleePersonalCode = document.querySelector('#remote_code').value;
         const callType = constants.callType.VIDEO_PERSONAL_CODE;
         webRTCHandler.sendPreOffer(callType, calleePersonalCode)
-        //this.classList.add('hide')
+        document.querySelectorAll('.call-container').forEach((evt) => {
+            evt.classList.add('display_none')
+        })
+
     });
 
     const startRecordingButton = document.querySelector('#start_recording_button');
@@ -36,6 +40,13 @@ export const startApp = (cb) => {
         ui.resetRecordingButtons();
     })
     }
+
+    const hangUpButton = document.querySelector('#hang_up_button');
+    if(hangUpButton) {
+    hangUpButton.addEventListener('click', () => {
+        webRTCHandler.handleHangUp();
+    });
+}
 
 }
 
